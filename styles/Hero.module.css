@@ -1,0 +1,159 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.logoContainer {
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: logoFade 1s ease forwards;
+  animation-delay: 0s; /* Logo animates first */
+}
+
+.logo {
+  max-width: 200px;
+  transition: transform 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ----------------- Headline & Subheading ----------------- */
+.headline, .subheading {
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.headline span, .subheading span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeSlideUp 0.6s forwards;
+}
+
+/* stagger using --i variable with delays for sequence */
+.headline span {
+  animation-delay: calc(1s + var(--i) * 0.08s); /* start after logo finishes 1s */
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subheading span {
+  animation-delay: calc(1s + 0.5s + var(--i) * 0.05s); /* start after headline finishes */
+  font-size: 1rem;
+  color: #555;
+  max-width: 350px;
+}
+
+/* ----------------- CTA Button ----------------- */
+.cta {
+  display: inline-block;
+  padding: 1.3rem 3rem; /* cylindrical shape */
+  font-weight: 600;
+  background: #000;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeSlideUp 0.8s forwards;
+  animation-delay: 2.5s; /* show after subheading finishes */
+  transition: all 0.5s ease;
+}
+
+.cta:hover {
+  background: #111;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* ----------------- Animations ----------------- */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoFade {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ----------------- Desktop & Laptop Enhancements ----------------- */
+@media(min-width: 768px) {
+  .logo {
+    max-width: 250px;
+  }
+  .headline span {
+    font-size: 3rem;
+  }
+  .subheading span {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+  .cta {
+    padding: 1.5rem 3.5rem;
+  }
+}
+
+/* ----------------- Large Screens (2K) ----------------- */
+@media(min-width: 1600px) {
+  .logo {
+    max-width: 320px;
+  }
+  .headline span {
+    font-size: 4rem;
+  }
+  .subheading span {
+    font-size: 1.5rem;
+    max-width: 900px;
+  }
+  .cta {
+    padding: 2rem 4.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* ----------------- Ultra Wide Screens (4K) ----------------- */
+@media(min-width: 2200px) {
+  .logo {
+    max-width: 400px;
+  }
+  .headline span {
+    font-size: 5rem;
+  }
+  .subheading span {
+    font-size: 1.8rem;
+    max-width: 1100px;
+  }
+  .cta {
+    padding: 2.5rem 5.5rem;
+    font-size: 1.5rem;
+  }
+  .content {
+    gap: 2rem;
+  }
+}

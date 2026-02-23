@@ -1,0 +1,157 @@
+.divider {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================= */
+/* Heading */
+/* ============================= */
+
+.heading {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* ============================= */
+/* Icons */
+/* ============================= */
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.icons a {
+  color: #aaa;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.05));
+}
+
+.icons a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+}
+
+.copy {
+  font-size: 14px;
+  color: #777;
+}
+
+/* ============================= */
+/* 1440px+ (Large Desktop) */
+/* ============================= */
+
+@media (min-width: 1440px) {
+  .footer {
+    padding: 110px 0;
+  }
+
+  .heading {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+  }
+
+  .icons {
+    gap: 35px;
+    margin-bottom: 35px;
+  }
+
+  .icons a {
+    font-size: 30px;
+  }
+
+  .copy {
+    font-size: 15px;
+  }
+}
+
+/* ============================= */
+/* 2K Screens (1600px+) */
+/* ============================= */
+
+@media (min-width: 1600px) {
+  .footer {
+    padding: 140px 0;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 60px;
+  }
+
+  .icons {
+    gap: 45px;
+    margin-bottom: 40px;
+  }
+
+  .icons a {
+    font-size: 38px;
+  }
+
+  .copy {
+    font-size: 17px;
+  }
+}
+
+/* ============================= */
+/* 4K Ultra Wide (2200px+) */
+/* ============================= */
+
+@media (min-width: 2200px) {
+  .footer {
+    padding: 200px 0;
+  }
+
+  .heading {
+    font-size: 4.5rem;
+    margin-bottom: 80px;
+  }
+
+  .icons {
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+
+  .icons a {
+    font-size: 48px;
+  }
+
+  .copy {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,168 @@
+.reviews {
+  padding: clamp(4rem, 8vw, 8rem) 1.5rem;
+  background: linear-gradient(180deg, #121212, #0f0f0f);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  opacity: 0.6;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.cardWrapper {
+  width: 100%;
+  max-width: 700px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.arrow {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/* ============================= */
+/* 1440px+ (Large Desktop) */
+/* ============================= */
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cardWrapper {
+    max-width: 850px;
+  }
+
+  .arrow {
+    font-size: 2.5rem;
+    padding: 0.8rem 1.4rem;
+  }
+}
+
+/* ============================= */
+/* 2K Screens (1600px+) */
+/* ============================= */
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .reviews {
+    padding: 10rem 3rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 5rem;
+  }
+
+  .cardWrapper {
+    max-width: 1000px;
+  }
+
+  .carousel {
+    gap: 3rem;
+  }
+
+  .arrow {
+    font-size: 3rem;
+    padding: 1rem 1.8rem;
+    border-radius: 16px;
+  }
+}
+
+/* ============================= */
+/* 4K Ultra Wide (2200px+) */
+/* ============================= */
+
+@media (min-width: 2200px) {
+  .container {
+    max-width: 1900px;
+  }
+
+  .reviews {
+    padding: 14rem 6rem;
+  }
+
+  .title {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 6rem;
+  }
+
+  .cardWrapper {
+    max-width: 1200px;
+  }
+
+  .carousel {
+    gap: 4rem;
+  }
+
+  .arrow {
+    font-size: 4rem;
+    padding: 1.2rem 2.2rem;
+    border-radius: 20px;
+  }
+}

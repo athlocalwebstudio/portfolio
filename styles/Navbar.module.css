@@ -1,0 +1,247 @@
+/* ---------- Navbar Container ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sticky {
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ---------- Logo ---------- */
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #333;
+  transform: scale(1.05);
+}
+
+/* Navbar Logo Circle */
+.logo a img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo a img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+/* ---------- Desktop Links ---------- */
+.navLinks {
+  display: none; /* hidden for mobile */
+}
+
+.desktopLink {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.desktopLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.desktopLink:hover::after {
+  width: 100%;
+}
+
+.desktopLink:hover {
+  color: #111;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ---------- Hamburger Icon (Mobile) ---------- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ---------- Mobile Menu Drawer ---------- */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  max-width: 350px;
+  height: 90vh;
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateX(100%);
+  opacity: 0;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+}
+
+.menuOpen {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Close Button */
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeBtn:hover {
+  color: #ccc;
+}
+
+/* Mobile Links */
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.mobileLink {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideFadeIn 0.5s forwards;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.mobileLink:nth-child(n) {
+  animation-delay: calc(var(--i) * 0.08s);
+}
+
+.mobileLink:hover {
+  color: #ccc;
+  background: rgba(255,255,255,0.1);
+  transform: translateY(0) scale(1.03);
+}
+
+/* ---------- Animations ---------- */
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media(min-width: 768px) {
+  .navLinks {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+}
+
+/* ---------------- Large Screens 2K ---------------- */
+@media(min-width: 1600px) {
+  .logo a img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .desktopLink {
+    font-size: 1.3rem;
+    margin-left: 2.5rem;
+  }
+
+  .navbar {
+    padding: 1.5rem 3rem;
+  }
+}
+
+/* ---------------- Ultra-Wide 4K ---------------- */
+@media(min-width: 2200px) {
+  .logo a img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .desktopLink {
+    font-size: 1.6rem;
+    margin-left: 3rem;
+  }
+
+  .navbar {
+    padding: 2rem 4rem;
+  }
+}
