@@ -27,7 +27,7 @@ export default function Hero() {
           ))}
         </p>
         <a href="#contact" className={styles.cta}>
-          Contact Us
+          Contact Me
         </a>
       </div>
     </section>
