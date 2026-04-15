@@ -6,6 +6,7 @@ import ProgressBar from "../components/ProgressBar";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Reviews from "@/components/Reviews";
+import Script from "next/script";
 
 // Google Fonts
 const geistSans = Geist({
@@ -76,6 +77,21 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-TEST"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', 'G-TEST');
+  `}
+</Script>
         <ProgressBar />
         <Navbar />
         <main>{children}</main>
