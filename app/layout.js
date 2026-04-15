@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-TEST"
+  src="https://www.googletagmanager.com/gtag/js?id=G-6DK6WKPP58"
   strategy="afterInteractive"
 />
 
@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
 window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', 'G-TEST');
+    gtag('config', 'G-6DK6WKPP58');
   `}
 </Script>
         <ProgressBar />
